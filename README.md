@@ -4,9 +4,7 @@
 - AboutDiscriminatedUnions
 - AboutFiltering
 - AboutModules
-- AboutOptionTypes
-- AboutRecordTypes
-- AboutTheStockExchange
+- AboutOptionTypes - had to comment out throws asset
 
 # Functional Koans - F
 
