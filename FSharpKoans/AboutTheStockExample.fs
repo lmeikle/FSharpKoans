@@ -39,11 +39,11 @@ module ``about the stock example`` =
           "2012-03-22,31.81,32.09,31.79,32.00,31749500,32.00";
           "2012-03-21,31.96,32.15,31.82,31.91,37928600,31.91";
           "2012-03-20,32.10,32.15,31.74,31.99,41566800,31.99";
-          "2012-03-19,32.54,32.61,32.15,32.20,44789200,32.20";
+            "2012-03-19,32.54,32.61,32.15,32.20,44789200,32.20";
           "2012-03-16,32.91,32.95,32.50,32.60,65626400,32.60";
           "2012-03-15,32.79,32.94,32.58,32.85,49068300,32.85";
           "2012-03-14,32.53,32.88,32.49,32.77,41986900,32.77";
-          "2012-03-13,32.24,32.69,32.15,32.67,48951700,32.67";
+            "2012-03-13,32.24,32.69,32.15,32.67,48951700,32.67";
           "2012-03-12,31.97,32.20,31.82,32.04,34073600,32.04";
           "2012-03-09,32.10,32.16,31.92,31.99,34628400,31.99";
           "2012-03-08,32.04,32.21,31.90,32.01,36747400,32.01";
@@ -60,6 +60,25 @@ module ``about the stock example`` =
 
     [<Koan>]
     let YouGotTheAnswerCorrect() =
-        let result =  __
+
+        let splitCommas (x:string) =
+            x.Split([|','|])
+
+        let tailStockData = stockData.Tail
+        let mutable maxVal:float = 0.0
+        let mutable date:string = ""
+        for i in tailStockData do
+            let arr = splitCommas i
+            let openVal = System.Double.Parse arr.[1]
+            let closeVal = System.Double.Parse arr.[4]
+            let diff = abs (openVal - closeVal)
+            //printfn "%f" diff
+            if (diff >= maxVal) then
+                date <- arr.[0]
+                maxVal <- diff
+            else
+                ()
+
+        let result = date
         
         AssertEquality "2012-03-13" result
