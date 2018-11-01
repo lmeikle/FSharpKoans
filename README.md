@@ -1,6 +1,5 @@
 # Left to do
 
-- AboutFiltering
 - AboutOptionTypes - had to comment out throws asset
 
 # Functional Koans - F
