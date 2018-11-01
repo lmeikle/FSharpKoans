@@ -1,9 +1,6 @@
 # Left to do
 
-- AboutClasses
-- AboutDiscriminatedUnions
 - AboutFiltering
-- AboutModules
 - AboutOptionTypes - had to comment out throws asset
 
 # Functional Koans - F
